@@ -22,7 +22,7 @@
 	<security:http entry-point-ref="casAuthenticationEntryPoint" auto-config="true">
 	
 		<security:intercept-url pattern="/secure/compras/**" access="ROLE_A"></security:intercept-url>
-		<security:intercept-url pattern="/secure/**" access="ROLE_USER"></security:intercept-url>
+		<security:intercept-url pattern="/secure/**" access="ROLE_USER,ROLE_A"></security:intercept-url>
 				
 		<security:custom-filter position="CAS_FILTER" ref="casAuthenticationFilter"></security:custom-filter>
 	</security:http>
