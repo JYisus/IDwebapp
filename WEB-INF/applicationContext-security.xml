@@ -42,7 +42,7 @@
 		actual redirect that will be triggered after the CAS login sequence.
 	-->
 	<bean id="serviceProperties" class="org.springframework.security.cas.ServiceProperties">
-		<property name="service" value="http://localhost:8080/simplecasclient/j_spring_cas_security_check"></property>
+		<property name="service" value="http://localhost:8080/IDwebapp/j_spring_cas_security_check"></property>
 		<property name="sendRenew" value="false"></property>
 	</bean>	
 
