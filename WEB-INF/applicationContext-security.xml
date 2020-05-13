@@ -21,8 +21,17 @@
 
 	<security:http entry-point-ref="casAuthenticationEntryPoint" auto-config="true">
 	
-		<security:intercept-url pattern="/secure/compras/**" access="ROLE_A"></security:intercept-url>
-		<security:intercept-url pattern="/secure/**" access="ROLE_USER,ROLE_A"></security:intercept-url>
+		<security:intercept-url pattern="/secure/compras/autorizar_compras.jsp" access="ROLE_1"></security:intercept-url>
+		<security:intercept-url pattern="/secure/compras/gestion_compras.jsp" access="ROLE_4"></security:intercept-url>
+		<security:intercept-url pattern="/secure/compras/gestion_proveedores.jsp" access="ROLE_4,ROLE_5"></security:intercept-url>
+
+		<security:intercept-url pattern="/secure/nominas/**" access="ROLE_3"></security:intercept-url>
+		<security:intercept-url pattern="/secure/nominas/gestion_trabajadores.jsp" access="ROLE_5"></security:intercept-url>
+
+		<security:intercept-url pattern="/secure/ventas/**" access="ROLE_2"></security:intercept-url>
+		<security:intercept-url pattern="/secure/ventas/gestion_presupuestos.jsp" access="ROLE_2,ROLE_5"></security:intercept-url>
+
+		<security:intercept-url pattern="/secure/**" access="ROLE_USER,ROLE_1,ROLE_2,ROLE_3,ROLE_4,ROLE_5"></security:intercept-url>
 				
 		<security:custom-filter position="CAS_FILTER" ref="casAuthenticationFilter"></security:custom-filter>
 	</security:http>
@@ -81,7 +90,11 @@
 	-->
 	<security:user-service id="userService">
 		<security:user name="casuser" authorities="ROLE_USER"></security:user>
-        <security:user name="juan" authorities="ROLE_A"></security:user>
+        <security:user name="joel" authorities="ROLE_1,ROLE_2,ROLE_3,ROLE_4"></security:user>
+		<security:user name="maggie" authorities="ROLE_2"></security:user>
+		<security:user name="chris" authorities="ROLE_3"></security:user>
+		<security:user name="maurice" authorities="ROLE_4"></security:user>
+		<security:user name="shelly" authorities="ROLE_5"></security:user>
 	</security:user-service>
 
 </beans>
