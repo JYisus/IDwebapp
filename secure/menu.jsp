@@ -11,6 +11,8 @@
 
 <p>Hola USUARIO; este es el menu de la aplicación:</p>
 
+<p><a href="../j_spring_security_logout">Logout</a></p>
+
 <h3>Módulo Ventas</h3></td>
 <p><a href="ventas/gestion_clientes.jsp">Operación: gestionar clientes</a></p>
 <p><a href="ventas/gestion_presupuestos.jsp">Operación: gestionar presupuestos</a></p>
