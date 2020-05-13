@@ -9,7 +9,10 @@
 <div id="content">
 <h1>Sistema de Gestión</h1>
 
-<p>Hola USUARIO; este es el menu de la aplicación:</p>
+<p>Hola <%= request.getUserPrincipal().getName() %>; este es el menu de la aplicación:</p>
+<p>
+  Your principal object is....: <%= request.getUserPrincipal() %>
+</p>
 
 <p><a href="../j_spring_security_logout">Logout</a></p>
 
