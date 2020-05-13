@@ -10,6 +10,7 @@
 <h1>Sistema de Gestión</h1>
 
 <p>Hola <%= request.getUserPrincipal().getName() %>; este es el menu de la aplicación:</p>
+<p>Tus roles son: <%= request.getUserPrincipal().getUserRoles() %></p>
 <p>
   Your principal object is....: <%= request.getUserPrincipal() %>
 </p>
