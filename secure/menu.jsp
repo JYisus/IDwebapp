@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page import="java.util.Arrays,java.util.List,java.util.ArrayList"%>
 <html>
   <head>
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -10,7 +10,21 @@
 <h1>Sistema de Gestión</h1>
 
 <p>Hola <%= request.getUserPrincipal().getName() %>; este es el menu de la aplicación:</p>
-<p>Tus roles son: <%= request.getUserPrincipal().getUserRoles() %></p>
+<p>
+
+<%
+List<String> roles = new ArrayList<String>(Arrays.asList(new String[]{"ROLE_1","ROLE_2","ROLE_3","ROLE_4","ROLE_5"}));
+List<String> userRoles = new ArrayList<String>();
+
+for(String role : roles) {
+    if(request.isUserInRole(role)) {
+	userRoles.add(role);
+    }
+}
+
+%>
+
+<p>Tus roles son: <%= userRoles.toString() %> </p>
 <p>
   Your principal object is....: <%= request.getUserPrincipal() %>
 </p>
