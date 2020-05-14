@@ -5,6 +5,7 @@
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <title>Home Page</title>
   </head>
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 <body>
 <div id="content">
 <h1>Sistema de Gestión</h1>
@@ -33,19 +34,19 @@ for(String role : roles) {
 <% if (request.isUserInRole("ROLE_2")) { %>
   <p><a href="ventas/gestion_clientes.jsp">Operación: gestionar clientes</a></p>
 <% } else { %>
-  <p><a href="ventas/gestion_clientes.jsp"> ! Operación: gestionar clientes</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="ventas/gestion_clientes.jsp"> Operación: gestionar clientes</a></p>
 <% } %> 
 
 <% if (request.isUserInRole("ROLE_2")) { %>
   <p><a href="ventas/gestion_facturas.jsp">Operación: gestionar facturas</a></p>
 <% } else { %>
-  <p><a href="ventas/gestion_facturas.jsp">! Operación: gestionar facturas</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="ventas/gestion_facturas.jsp"> Operación: gestionar facturas</a></p>
 <% } %> 
 
 <% if (request.isUserInRole("ROLE_2") || request.isUserInRole("ROLE_5")) { %>
   <p><a href="ventas/gestion_presupuestos.jsp">Operación: gestionar presupuestos</a></p>
 <% } else { %>
-  <p><a href="ventas/gestion_presupuestos.jsp">! Operación: gestionar presupuestos</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="ventas/gestion_presupuestos.jsp"> Operación: gestionar presupuestos</a></p>
 <% } %> 
 
 
@@ -53,26 +54,26 @@ for(String role : roles) {
 <% if (request.isUserInRole("ROLE_4") || request.isUserInRole("ROLE_5")) { %>
   <p><a href="compras/gestion_proveedores.jsp">Operación: gestionar proveedores</a></p>
 <% } else { %>
-  <p><a href="compras/gestion_proveedores.jsp">! Operación: gestionar proveedores</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="compras/gestion_proveedores.jsp"> Operación: gestionar proveedores</a></p>
 <% } %> 
 
 <% if (request.isUserInRole("ROLE_4")) { %>
   <p><a href="compras/gestion_compras.jsp">Operación: gestionar compras</a></p>
 <% } else { %>
-  <p><a href="compras/gestion_compras.jsp">! Operación: gestionar compras</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="compras/gestion_compras.jsp"> Operación: gestionar compras</a></p>
 <% } %> 
 
 <% if (request.isUserInRole("ROLE_1")) { %>
     <p><a href="compras/autorizar_compras.jsp">Operación: autorizar compras</a></p>
 <% } else { %>
-    <p><a href="compras/autorizar_compras.jsp">! Operación: autorizar compras</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="compras/autorizar_compras.jsp"> Operación: autorizar compras</a></p>
 <% } %> 
 
 <h3>Módulo Nóminas</h3></td>
 <% if (request.isUserInRole("ROLE_3") || request.isUserInRole("ROLE_5")) { %>
   <p><a href="nominas/gestion_trabajadores.jsp">Operación: gestionar trabajadores</a></p>
 <% } else { %>
-  <p><a href="nominas/gestion_trabajadores.jsp">! Operación: gestionar trabajadores</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="nominas/gestion_trabajadores.jsp"> Operación: gestionar trabajadores</a></p>
 
 <% } %> 
 
@@ -80,7 +81,7 @@ for(String role : roles) {
   <p><a href="nominas/gestion_nominas.jsp">Operación: gestionar nóminas</a></p>
 
 <% } else { %>
-    <p><a href="nominas/gestion_nominas.jsp">! Operación: gestionar nóminas</a></p>
+    <p><img src="../static/img/forbidden.png" class="url_logo"><a href="nominas/gestion_nominas.jsp"> Operación: gestionar nóminas</a></p>
 <% } %> 
 
 </body>
