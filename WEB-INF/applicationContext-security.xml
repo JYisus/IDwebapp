@@ -34,6 +34,10 @@
 		<security:intercept-url pattern="/secure/**" access="ROLE_USER,ROLE_1,ROLE_2,ROLE_3,ROLE_4,ROLE_5"></security:intercept-url>
 				
 		<security:custom-filter position="CAS_FILTER" ref="casAuthenticationFilter"></security:custom-filter>
+
+		<!-- <security:logout logout-success-url="http://localhost:8090/cas-server-webapp-4.0.0/logout"/> -->
+		<security:logout logout-success-url="http://localhost:8090/cas-server-webapp-4.0.0/logout?service=http://localhost:8080/IDwebapp" invalidate-session="true"/>
+
 	</security:http>
 
 
@@ -96,5 +100,6 @@
 		<security:user name="maurice" authorities="ROLE_4"></security:user>
 		<security:user name="shelly" authorities="ROLE_5"></security:user>
 	</security:user-service>
+
 
 </beans>
