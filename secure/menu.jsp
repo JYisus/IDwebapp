@@ -32,19 +32,59 @@ for(String role : roles) {
 <p><a href="../j_spring_security_logout">Logout</a></p>
 
 <h3>Módulo Ventas</h3></td>
-<p><a href="ventas/gestion_clientes.jsp">Operación: gestionar clientes</a></p>
-<p><a href="ventas/gestion_presupuestos.jsp">Operación: gestionar presupuestos</a></p>
-<p><a href="ventas/gestion_facturas.jsp">Operación: gestionar facturas</a></p>
+
+<% if (request.isUserInRole("ROLE_2")) { %>
+  <p><a href="ventas/gestion_clientes.jsp">Operación: gestionar clientes</a></p>
+<% } else { %>
+  <p><a href="ventas/gestion_clientes.jsp"> ! Operación: gestionar clientes</a></p>
+<% } %> 
+
+<% if (request.isUserInRole("ROLE_2")) { %>
+  <p><a href="ventas/gestion_facturas.jsp">Operación: gestionar facturas</a></p>
+<% } else { %>
+  <p><a href="ventas/gestion_facturas.jsp">! Operación: gestionar facturas</a></p>
+<% } %> 
+
+<% if (request.isUserInRole("ROLE_2") || request.isUserInRole("ROLE_5")) { %>
+  <p><a href="ventas/gestion_presupuestos.jsp">Operación: gestionar presupuestos</a></p>
+<% } else { %>
+  <p><a href="ventas/gestion_presupuestos.jsp">! Operación: gestionar presupuestos</a></p>
+<% } %> 
+
 
 <h3>Módulo Compras</h3></td>
-<p><a href="compras/gestion_proveedores.jsp">Operación: gestionar proveedores</a></p>
-<p><a href="compras/gestion_compras.jsp">Operación: gestionar compras</a></p>
-<p><a href="compras/autorizar_compras.jsp">Operación: autorizar compras</a></p>
+<% if (request.isUserInRole("ROLE_4") || request.isUserInRole("ROLE_5")) { %>
+  <p><a href="compras/gestion_proveedores.jsp">Operación: gestionar proveedores</a></p>
+<% } else { %>
+  <p><a href="compras/gestion_proveedores.jsp">! Operación: gestionar proveedores</a></p>
+<% } %> 
 
+<% if (request.isUserInRole("ROLE_4")) { %>
+  <p><a href="compras/gestion_compras.jsp">Operación: gestionar compras</a></p>
+<% } else { %>
+  <p><a href="compras/gestion_compras.jsp">! Operación: gestionar compras</a></p>
+<% } %> 
+
+<% if (request.isUserInRole("ROLE_1")) { %>
+    <p><a href="compras/autorizar_compras.jsp">Operación: autorizar compras</a></p>
+<% } else { %>
+    <p><a href="compras/autorizar_compras.jsp">! Operación: autorizar compras</a></p>
+<% } %> 
 
 <h3>Módulo Nóminas</h3></td>
-<p><a href="nominas/gestion_trabajadores.jsp">Operación: gestionar trabajadores</a></p>
-<p><a href="nominas/gestion_nominas.jsp">Operación: gestionar nóminas</a></p>
+<% if (request.isUserInRole("ROLE_3") || request.isUserInRole("ROLE_5")) { %>
+  <p><a href="nominas/gestion_trabajadores.jsp">Operación: gestionar trabajadores</a></p>
+<% } else { %>
+  <p><a href="nominas/gestion_trabajadores.jsp">! Operación: gestionar trabajadores</a></p>
+
+<% } %> 
+
+<% if (request.isUserInRole("ROLE_3")) { %>
+  <p><a href="nominas/gestion_nominas.jsp">Operación: gestionar nóminas</a></p>
+
+<% } else { %>
+    <p><a href="nominas/gestion_nominas.jsp">! Operación: gestionar nóminas</a></p>
+<% } %> 
 
 </body>
 </html>
