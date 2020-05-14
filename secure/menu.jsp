@@ -25,9 +25,6 @@ for(String role : roles) {
 %>
 
 <p>Tus roles son: <%= userRoles.toString() %> </p>
-<p>
-  Your principal object is....: <%= request.getUserPrincipal() %>
-</p>
 
 <p><a href="../j_spring_security_logout">Logout</a></p>
 
